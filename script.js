@@ -6,10 +6,16 @@ function alterGrid(width) {
         element.remove();
     });
     // create new grid
+    alterContainer(width);
     createGrid(width);
 }
 
-function createContainer(width) {
+function alterContainer(width) {
+    let padding = 25;
+    let length = ((padding*2)*width) + (width*2);
+    const grid = document.querySelector("#grid");
+    grid.style.width = `${length}px`;
+    grid.style.height = `${length}px`;
     
 }
 
@@ -44,5 +50,6 @@ function sizeButton() {
     });
 }
 
+alterContainer(16);
 sizeButton();
 createGrid(16);
